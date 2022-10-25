@@ -15,7 +15,7 @@ const errorHandler: ErrorRequestHandler = (
   if (err instanceof CustomErrors) {
     const { status, message } = err as CustomErrors;
 
-    return res.status(status).json({ message });
+    return res.status(status).json({ error: message });
   }
 
   console.error(err);
