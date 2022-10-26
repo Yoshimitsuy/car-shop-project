@@ -15,6 +15,21 @@ export const carMockId = {
   seatsQty: 2,
   doorsQty: 2
 }
-// const setCarMock
-// const setCarMockId
+export const setCarMock = {
+  model: "Mustang Yoshimitsuy",
+  year: 1961,
+  color: "pink",
+  buyValue: 6000000,
+  seatsQty: 2,
+  doorsQty: 2
+}
 
+  export const setCarMockId = {
+  _id: "6359a3163d034fb1c9933881",
+  model: "Mustang Yoshimitsuy",
+  year: 1961,
+  color: "pink",
+  buyValue: 6000000,
+  seatsQty: 2,
+  doorsQty: 2
+  }
