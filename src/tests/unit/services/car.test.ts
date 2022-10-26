@@ -14,17 +14,35 @@ describe('Car Service', () => {
 
   before(async () => {
     sinon.stub(Model, 'create').resolves(carMockId);
+    sinon.stub(carModel, 'readOne').resolves(carMockId);
+    sinon.stub(carModel, 'read').resolves([carMockId])
   });
 
   after(()=>{
     sinon.restore();
-  })
+  });
 
   describe('creating a car', () => {
     it('sucessfully created', async () => {
       const newCar = await carService.create(carMock);
       expect(newCar).to.be.deep.equal(carMockId)
     });
-  })
+  });
+
+  describe('', () => {
+    it('', async () => {
+      const carFound = await carService.readOne('test');
+      expect(carFound).to.be.deep.equal('Id must have 24 hexadecimal characters')
+    });
+  });
+
+  describe('', () => {
+    it('', async () => {
+      const carFound = await carService.read();
+      expect(carFound).to.be.deep.equal([carMockId])
+    });
+  });
+
+
 
 });
