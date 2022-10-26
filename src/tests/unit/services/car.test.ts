@@ -13,7 +13,7 @@ describe('Car Service', () => {
   const carService = new CarService(carModel);
 
   before(async () => {
-    sinon.stub(Model, 'create').resolves(carMockId);
+    sinon.stub(carModel, 'create').resolves(carMockId);
     sinon.stub(carModel, 'readOne').resolves(carMockId);
     sinon.stub(carModel, 'read').resolves([carMockId])
   });
@@ -31,8 +31,8 @@ describe('Car Service', () => {
 
   describe('', () => {
     it('', async () => {
-      const carFound = await carService.readOne('test');
-      expect(carFound).to.be.deep.equal('Id must have 24 hexadecimal characters')
+      const carFound = await carService.readOne(carMockId._id);
+      expect(carFound).to.be.deep.equal(carMockId)
     });
   });
 
